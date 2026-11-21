@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Имя Фамилия — студент-психолог</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#EDF1F3; --surface:#FFFFFF; --ink:#1E2B34; --muted:#5A6B75;
+  --accent:#2C6B78; --accent-soft:#D3E4E8; --line:#D3DCE1;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121A20; --surface:#1A252D; --ink:#E6EDF0; --muted:#98A9B3;
+    --accent:#7CC0CE; --accent-soft:#1F3A43; --line:#2A3943; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121A20; --surface:#1A252D; --ink:#E6EDF0; --muted:#98A9B3;
+  --accent:#7CC0CE; --accent-soft:#1F3A43; --line:#2A3943; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--sans)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+
+header.top{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0}
+.brand{font:600 1.125rem var(--serif);text-decoration:none;color:var(--ink)}
+nav{display:flex;gap:1.5rem;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--accent)}
+
+.hero{position:relative;padding:4rem 0 5.5rem;overflow:hidden}
+.hero h1{font:600 clamp(2.6rem,7vw,5rem)/1.05 var(--serif);letter-spacing:-.02em;margin:0 0 1.5rem;max-width:12em}
+.hero p{max-width:34rem;color:var(--muted);font-size:1.2rem;margin:0 0 2rem}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:.85rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:600}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line);margin-left:.5rem}
+.rings{position:absolute;right:-6rem;top:2rem;width:26rem;height:26rem;pointer-events:none;z-index:-1}
+.rings i{position:absolute;border-radius:50%;background:var(--accent-soft);opacity:.85}
+.rings i:nth-child(1){width:17rem;height:17rem;left:0;top:0}
+.rings i:nth-child(2){width:17rem;height:17rem;left:8rem;top:5rem;mix-blend-mode:multiply;opacity:.6}
+.rings i:nth-child(3){width:7rem;height:7rem;left:4rem;top:15rem;background:var(--accent);opacity:.25}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rings i:nth-child(2){mix-blend-mode:screen}}
+:root[data-theme="dark"] .rings i:nth-child(2){mix-blend-mode:screen}
+
+section{padding:4rem 0;border-top:1px solid var(--line)}
+section h2{font:600 clamp(1.8rem,4vw,2.4rem)/1.2 var(--serif);margin:0 0 2rem;letter-spacing:-.01em}
+.cols{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem}
+.cols>h2{margin:0}
+.prose p{margin:0 0 1.1rem;max-width:38rem}
+.prose p:last-child{margin:0}
+
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--accent-soft)}
+.timeline li{padding:0 0 1.75rem 1.5rem;position:relative}
+.timeline li::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.timeline b{display:block;font:600 1.15rem var(--serif)}
+.timeline span{color:var(--muted);font-size:.95rem}
+
+.topics{display:flex;flex-wrap:wrap;gap:.75rem;padding:0;margin:0;list-style:none}
+.topics li{background:var(--surface);padding:.7rem 1.2rem;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line)}
+
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.25rem}
+.post{background:var(--surface);padding:1.5rem;border-radius:1rem;box-shadow:inset 0 0 0 1px var(--line)}
+.post small{color:var(--muted)}
+.post h3{font:600 1.25rem/1.3 var(--serif);margin:.4rem 0 .6rem}
+.post p{margin:0;color:var(--muted);font-size:.98rem}
+
+.notice{background:var(--accent-soft);padding:1.25rem 1.5rem;border-radius:1rem;max-width:44rem;margin-top:2rem;font-size:.97rem}
+.contacts a{display:block;font:600 1.4rem var(--serif);text-decoration:none;margin-bottom:.6rem;width:fit-content}
+.contacts a:hover{text-decoration:underline}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (max-width:48rem){
+  .cols{grid-template-columns:1fr;gap:1.5rem}
+  .rings{opacity:.5;right:-12rem}
+  .btn.ghost{margin:.75rem 0 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top">Екатерина Настобурская</a>
+    <nav aria-label="Разделы">
+      <a href="#about">Обо мне</a>
+      <a href="#path">Путь</a>
+      <a href="#topics">Интересы</a>
+      <a href="#blog">Блог</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="rings" aria-hidden="true"><i></i><i></i><i></i></div>
+      <h1>Понимаю людей, чтобы помогать им понимать себя</h1>
+      <p>Клинический психолог. Пишу о психологии простым язвком. Начинаю психологическую практику.</p>
+      <a class="btn" href="#blog">Читать заметки</a>
+      <a class="btn ghost" href="#contact">Связаться</a>
+    </div>
+
+    <section id="about">
+      <div class="cols">
+        <h2>Обо мне</h2>
+        <div class="prose">
+          <p>Здравстуйте! Меня зовут Екатерина. Я учусь на психолога в Новосибирском государственном университете и интересуюсь тем, как люди думают, чувствуют и принимают решения.</p>
+          <p>Параллельно я осваиваю DevOps в Школе 21.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="path">
+      <div class="cols">
+        <h2>Образование и обучение</h2>
+        <ol class="timeline">
+          <li><b>НГУ, ИММТ, факультет психологии</b><span>2023-2028, бакалавриат</span></li>
+          <li><b>Школа 21</b><span>Направление DevOps-инженерии</span></li>
+          <li><b>Курсы повышения квалификации: </span></li>
+          <li><b>Волонтер, музыкант, вожатый </span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="topics">
+      <div class="cols">
+        <h2>Чем интересуюсь</h2>
+        <ul class="topics">
+          <li>Клиническая психология</li>
+          <li>Эмоции и саморегуляция</li>
+          <li>Когнитивно-поведенческая терапия</li>
+          <li>Аффектиные расстройства</li>
+          <li>Наука</li>
+          <li>Гештальт-терапия</li>
+          <li>Психиатрия</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="blog">
+      <h2>Заметки</h2>
+      <div class="posts">
+        <article class="post"><small>Скоро</small><h3>Что такое депрессия?</h3><p>Как выглядит человек с депрессией, что он чувствует и какие есть симптомы депрессии.</p></article>
+        <article class="post"><small>Скоро</small><h3>Что такое депрессия?</h3><p>Что такое СДВГ, в чем проявляется и как живется человеку с СДВГ.</p></article>
+        <article class="post"><small>Скоро</small><h3>Нарушения мышления</h3><p>Какие бывают нарушения мышления и при каких диагнозах могут проявляться конкретные нарушения.</p></article>
+      </div>
+      <p class="notice">Я пока учусь и только начинаю познавать практику. Материалы на сайте носят просветительский характер и не заменяют консультацию специалиста.</p>
+    </section>
+
+    <section id="contact">
+      <div class="cols">
+        <h2>Контакты</h2>
+        <div class="contacts">
+          <a href="mailto:name@example.com">nastick.ekat@gmail.com</a>
+          <a href="https://t.me/username">Telegram: @nastickkk</a>
+          <p style="color:var(--muted);margin:1rem 0 0">Записывайтесь на консультацию ☺.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Екатерина Настобурская</footer>
+</div>
+</body>
+</html>

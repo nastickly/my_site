@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Название заметки — Екатерина Настобурская</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  --bg:#EDF1F3; --ink:#1E2B34; --muted:#5A6B75; --accent:#2C6B78; --line:#D3DCE1;
+  --serif:"Source Serif 4",Georgia,serif;
+  --sans:"Manrope",system-ui,-apple-system,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#121A20;--ink:#E6EDF0;--muted:#98A9B3;--accent:#7CC0CE;--line:#2A3943;color-scheme:dark}
+}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.7 var(--sans)}
+a{color:var(--accent)}
+.wrap{max-width:42rem;margin:0 auto;padding:1.5rem}
+.back{display:inline-block;margin-bottom:2.5rem;text-decoration:none;font-weight:500}
+h1{font:600 clamp(2rem,6vw,3rem)/1.15 var(--serif);letter-spacing:-.01em;margin:0 0 .75rem}
+.date{color:var(--muted);margin:0 0 2.5rem}
+h2{font:600 1.5rem/1.3 var(--serif);margin:2.5rem 0 .75rem}
+p{margin:0 0 1.2rem}
+blockquote{margin:1.5rem 0;padding-left:1.25rem;border-left:3px solid var(--accent);color:var(--muted)}
+footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← На главную</a>
+
+  <article>
+    <h1>Название заметки</h1>
+    <p class="date">21 ноября 2026</p>
+
+    <p>Первый абзац: о чём эта заметка и почему она важна.</p>
+
+    <h2>Подзаголовок</h2>
+    <p>Основной текст. Каждый абзац оборачивай в теги p.</p>
+    <p>Ещё один абзац.</p>
+
+    <blockquote>Здесь можно выделить важную мысль или цитату.</blockquote>
+
+    <h2>Вывод</h2>
+    <p>Короткое заключение.</p>
+  </article>
+
+  <footer>Материал носит просветительский характер и не заменяет консультацию специалиста.</footer>
+</div>
+</body>
+</html>
