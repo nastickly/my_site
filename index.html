@@ -70,9 +70,12 @@ section h2{font:600 clamp(1.8rem,4vw,2.4rem)/1.2 var(--serif);margin:0 0 2rem;le
 .topics li{background:var(--surface);padding:.7rem 1.2rem;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line)}
 
 .posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.25rem}
-.post{background:var(--surface);padding:1.5rem;border-radius:1rem;box-shadow:inset 0 0 0 1px var(--line)}
+.post{background:var(--surface);padding:1.5rem;border-radius:1rem;box-shadow:inset 0 0 0 1px var(--line);position:relative}
 .post small{color:var(--muted)}
 .post h3{font:600 1.25rem/1.3 var(--serif);margin:.4rem 0 .6rem}
+.post h3 a{color:inherit;text-decoration:none}
+.post h3 a::after{content:"";position:absolute;inset:0}
+.post h3 a:hover{color:var(--accent)}
 .post p{margin:0;color:var(--muted);font-size:.98rem}
 
 .notice{background:var(--accent-soft);padding:1.25rem 1.5rem;border-radius:1rem;max-width:44rem;margin-top:2rem;font-size:.97rem}
@@ -150,7 +153,7 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px sol
     <section id="blog">
       <h2>Заметки</h2>
       <div class="posts">
-        <article class="post"><small>Скоро</small><h3>Что такое депрессия?</h3><p>Как выглядит человек с депрессией, что он чувствует и какие есть симптомы депрессии.</p></article>
+        <article class="post"><small>21 ноября 2026</small><h3><a href="depression.html">Что такое депрессия?</a></h3><p>Как выглядит человек с депрессией, что он чувствует и какие есть симптомы депрессии.</p></article>
         <article class="post"><small>Скоро</small><h3>Что такое депрессия?</h3><p>Что такое СДВГ, в чем проявляется и как живется человеку с СДВГ.</p></article>
         <article class="post"><small>Скоро</small><h3>Нарушения мышления</h3><p>Какие бывают нарушения мышления и при каких диагнозах могут проявляться конкретные нарушения.</p></article>
       </div>
